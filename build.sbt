@@ -16,7 +16,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.3.8" withSources(),
   "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.0"
+  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.1"
 )
 
 enablePlugins(JavaAppPackaging)
@@ -28,7 +28,7 @@ version in Docker := "1.0"
 val installAll =
   s"""apk update && apk add bash
      |&& apk add nodejs
-     |&& npm install -g https://github.com/rtfpessoa/csslint/archive/v0.10.1.tar.gz
+     |&& npm install -g csslint
    """.stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
